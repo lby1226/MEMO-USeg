@@ -114,12 +114,3 @@ python code/test_mome_useg.py \
 ```
 
 Dice, IoU, SM, HD95 and ASSD are reported per dataset (mean ± std over folds) and saved to `final_statistics.csv/.xlsx`; add `--visualize` to export TP/FP/FN error maps.
-
-### 6. Interactive demo
-
-```bash
-pip install PyQt5
-python app/gui.py
-```
-
-Once `app/weights/best_model.pth` is available, the GUI allows selecting an organ and segmenting an uploaded ultrasound image without any manual prompts.
