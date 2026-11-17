@@ -89,9 +89,7 @@ export DATASET_ROOT=/path/to/datasets     # Windows: set DATASET_ROOT=D:\dataset
 
 ### 3. Pretrained backbone
 
-Download the official SAM2.1 Hiera checkpoint (e.g. `sam2.1_hiera_base_plus.pt`) from the [SAM 2 repository](https://github.com/facebookresearch/sam2#download-checkpoints) and place it in `./checkpoints`, or pass its path with `--sam2_ckpt`.
-
-To use the SAM1 backbone (`--arch sam`), download the ViT checkpoint (`sam_vit_b_01ec64.pth`, `sam_vit_l_0b3195.pth` or `sam_vit_h_4b8939.pth`) from the [Segment Anything repository](https://github.com/facebookresearch/segment-anything#model-checkpoints) and place it in `./checkpoints`, or pass its path with `--sam_ckpt`. The SAM1 branch (`segment_anything`) must be installed separately.
+Download the official [SAM 2.1](https://github.com/facebookresearch/sam2#download-checkpoints) Hiera checkpoint (e.g. `sam2.1_hiera_base_plus.pt`, passed via `--sam2_ckpt`) or [SAM 1](https://github.com/facebookresearch/segment-anything#model-checkpoints) ViT checkpoint (`sam_vit_*.pth`, passed via `--sam_ckpt`) into `./checkpoints`; SAM 1 additionally requires `segment_anything` to be installed.
 
 ### 4. Training
 
