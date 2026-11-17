@@ -100,7 +100,7 @@ python code/train_mome_useg.py \
     --save_dir work_dir/MEMO_SAM2_5Fold
 ```
 
-The script runs 5-fold cross-validation and keeps the best checkpoint according to validation Dice. Defaults follow the paper: `--common_ratio 4.0` (R_GE), `--expert_ratio 0.25` (R_SE) and `--prompt_threshold 0.9` (τ). Use `--folds 0 1` to train only selected folds, or `--arch sam --model_type vit_l` to switch to the SAM1 backbone.
+The script runs 5-fold cross-validation and keeps the best checkpoint according to validation Dice. Defaults follow the paper: `--common_ratio 4.0` (R_GE), `--expert_ratio 0.25` (R_SE) and `--prompt_threshold 0.9` (τ).
 
 ### 5. Evaluation
 
@@ -110,5 +110,3 @@ python code/test_mome_useg.py \
     --checkpoint_dir work_dir/MEMO_SAM2_5Fold \
     --gpu 0
 ```
-
-Dice, IoU, SM, HD95 and ASSD are reported per dataset (mean ± std over folds) and saved to `final_statistics.csv/.xlsx`; add `--visualize` to export TP/FP/FN error maps.
