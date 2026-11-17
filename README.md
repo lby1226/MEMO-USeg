@@ -31,12 +31,12 @@ This repository provides the official implementation of MEMO-USeg.
 
 <p align="center"><i>Examples from the 13 ultrasound organs covered by MEMO-USeg.</i></p>
 
-## 🚀 Deployment
+## 🏥 Clinical Application
 
-In practice, users only need to select a trained organ in the MEMO-USeg interface and upload the corresponding ultrasound image; the target organ is then segmented automatically. A single model handles multi-organ segmentation without any manual box or point prompts.
+In clinical use, the operator only needs to select the target organ in the MEMO-USeg interface and upload the corresponding ultrasound image; the organ is then segmented automatically. A single model handles multi-organ segmentation without any manual box or point prompts.
 
 <p align="center">
-  <img src="assets/demo.gif" alt="MEMO-USeg deployment demo" width="85%">
+  <img src="assets/demo.gif" alt="MEMO-USeg clinical application demo" width="85%">
 </p>
 
 <p align="center"><i>Select an organ and upload an ultrasound image — segmentation is fully automatic.</i></p>
