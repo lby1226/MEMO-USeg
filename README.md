@@ -18,7 +18,7 @@ This repository provides the official implementation of MEMO-USeg.
 
 **MEMO-USeg: An Organ-Conditioned Self-Prompting Multi-Expert Framework for Multi-Organ Ultrasound Image Segmentation** — **Under Review**
 
-### ✨ Key Features
+### ✨ Method Highlights
 
 - **One model, multiple organs.** Through multi-expert joint learning on multi-organ images, a single model performs automatic segmentation across multiple organs.
 - **Broad organ coverage.** Validated on ultrasound images covering 13 organs.
