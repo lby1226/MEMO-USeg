@@ -43,4 +43,6 @@ In clinical use, the operator only needs to select the target organ in the MEMO-
 
 ## ⚙️ Installation and Getting Started
 
+Details of the model architecture and its associated weights are being curated and will be released following the acceptance of this manuscript.
+
 To be added.
