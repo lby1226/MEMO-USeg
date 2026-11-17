@@ -112,4 +112,4 @@ python code/test_mome_useg.py \
     --gpu 0
 ```
 
-Dice, IoU, HD95 and ASSD are computed for every dataset and reported as mean ± std over the evaluated folds.
+Dice, IoU, HD95 and ASSD are computed for every dataset and reported as mean ± std over the evaluated folds, together with the macro average across datasets.
