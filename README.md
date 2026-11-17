@@ -91,6 +91,8 @@ export DATASET_ROOT=/path/to/datasets     # Windows: set DATASET_ROOT=D:\dataset
 
 Download the official SAM2.1 Hiera checkpoint (e.g. `sam2.1_hiera_base_plus.pt`) from the [SAM 2 repository](https://github.com/facebookresearch/sam2#download-checkpoints) and place it in `./checkpoints`, or pass its path with `--sam2_ckpt`.
 
+To use the SAM1 backbone (`--arch sam`), download the ViT checkpoint (`sam_vit_b_01ec64.pth`, `sam_vit_l_0b3195.pth` or `sam_vit_h_4b8939.pth`) from the [Segment Anything repository](https://github.com/facebookresearch/segment-anything#model-checkpoints) and place it in `./checkpoints`, or pass its path with `--sam_ckpt`. The SAM1 branch (`segment_anything`) must be installed separately.
+
 ### 4. Training
 
 ```bash
