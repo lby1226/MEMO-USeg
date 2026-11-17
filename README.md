@@ -86,8 +86,6 @@ The 13 datasets and their class ids are defined in [`code/datasets.yaml`](code/d
 export DATASET_ROOT=/path/to/datasets     # Windows: set DATASET_ROOT=D:\datasets
 ```
 
-Five-fold splits are generated automatically with a fixed seed (1234); placing a `fold_{k}.json` inside a dataset directory overrides the automatic split.
-
 ### 3. Pretrained backbone
 
 Download the official SAM2.1 Hiera checkpoint (e.g. `sam2.1_hiera_base_plus.pt`) from the [SAM 2 repository](https://github.com/facebookresearch/sam2#download-checkpoints) and place it in `./checkpoints`, or pass its path with `--sam2_ckpt`.
