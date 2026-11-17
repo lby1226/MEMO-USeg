@@ -1,0 +1,52 @@
+datasets:
+  - name: TN3K
+    root: ${DATASET_ROOT}/TN3K
+    class_id: 0
+
+  - name: BUSI
+    root: ${DATASET_ROOT}/BUSI
+    class_id: 1
+
+  - name: fetal-head
+    root: ${DATASET_ROOT}/fetal-head
+    class_id: 2
+
+  - name: kidneyUS
+    root: ${DATASET_ROOT}/kidneyUS
+    class_id: 3
+
+  - name: cdus
+    root: ${DATASET_ROOT}/cdus
+    class_id: 4
+
+  - name: ovarian
+    root: ${DATASET_ROOT}/ovarian
+    class_id: 5
+
+  - name: fallmud
+    root: ${DATASET_ROOT}/fallmud
+    class_id: 6
+
+  - name: fetal-lung
+    root: ${DATASET_ROOT}/fetal-lung
+    class_id: 7
+
+  - name: CC
+    root: ${DATASET_ROOT}/CC
+    class_id: 8
+
+  - name: Lymph Node
+    root: ${DATASET_ROOT}/Lymph Node
+    class_id: 9
+
+  - name: LUMINOUS
+    root: ${DATASET_ROOT}/LUMINOUS
+    class_id: 10
+
+  - name: GIST514-DB
+    root: ${DATASET_ROOT}/GIST514-DB
+    class_id: 11
+
+  - name: HMC-QU
+    root: ${DATASET_ROOT}/HMC-QU
+    class_id: 12
