@@ -43,6 +43,83 @@ In clinical use, the operator only needs to select the target organ in the MEMO-
 
 ## ⚙️ Installation and Getting Started
 
-Details of the model architecture and its associated weights are being curated and will be released following the acceptance of this manuscript.
+Details of the model architecture and its associated weights are being curated and will be released following the acceptance of this manuscript. The training and evaluation pipeline is provided in [`code/`](code).
 
-To be added.
+### 1. Environment
+
+```bash
+git clone https://github.com/lby1226/MEMO-USeg.git
+cd MEMO-USeg
+conda create -n memo-useg python=3.10 -y
+conda activate memo-useg
+pip install -r code/requirements.txt
+```
+
+If you need a specific CUDA build of PyTorch, install it first from the [PyTorch index](https://pytorch.org/get-started/locally/), for example:
+
+```bash
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+```
+
+### 2. Dataset preparation
+
+Arrange each ultrasound dataset under a common root, with images and masks sharing the same file stem:
+
+```text
+${DATASET_ROOT}/
+├── TN3K/
+│   ├── trainval/
+│   │   ├── images/
+│   │   └── masks/
+│   └── test/
+│       ├── images/
+│       └── masks/
+├── BUSI/
+│   └── ...
+└── HMC-QU/
+    └── ...
+```
+
+The 13 datasets and their class ids are defined in [`code/datasets.yaml`](code/datasets.yaml). Point `DATASET_ROOT` to your data directory:
+
+```bash
+export DATASET_ROOT=/path/to/datasets     # Windows: set DATASET_ROOT=D:\datasets
+```
+
+Five-fold splits are generated automatically with a fixed seed (1234); placing a `fold_{k}.json` inside a dataset directory overrides the automatic split.
+
+### 3. Pretrained backbone
+
+Download the official SAM2.1 Hiera checkpoint (e.g. `sam2.1_hiera_base_plus.pt`) from the [SAM 2 repository](https://github.com/facebookresearch/sam2#download-checkpoints) and place it in `./checkpoints`, or pass its path with `--sam2_ckpt`.
+
+### 4. Training
+
+```bash
+python code/train_mome_useg.py \
+    --arch sam2 --model_type base \
+    --data_config code/datasets.yaml \
+    --gpu 0 --epochs 50 --batch_size 32 \
+    --save_dir work_dir/MEMO_SAM2_5Fold
+```
+
+The script runs 5-fold cross-validation and keeps the best checkpoint according to validation Dice. Defaults follow the paper: `--common_ratio 4.0` (R_GE), `--expert_ratio 0.25` (R_SE) and `--prompt_threshold 0.9` (τ). Use `--folds 0 1` to train only selected folds, or `--arch sam --model_type vit_l` to switch to the SAM1 backbone.
+
+### 5. Evaluation
+
+```bash
+python code/test_mome_useg.py \
+    --arch sam2 --model_type base \
+    --checkpoint_dir work_dir/MEMO_SAM2_5Fold \
+    --gpu 0
+```
+
+Dice, IoU, SM, HD95 and ASSD are reported per dataset (mean ± std over folds) and saved to `final_statistics.csv/.xlsx`; add `--visualize` to export TP/FP/FN error maps.
+
+### 6. Interactive demo
+
+```bash
+pip install PyQt5
+python app/gui.py
+```
+
+Once `app/weights/best_model.pth` is available, the GUI allows selecting an organ and segmenting an uploaded ultrasound image without any manual prompts.
