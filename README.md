@@ -101,7 +101,7 @@ python code/train_mome_useg.py \
     --save_dir work_dir/MEMO_SAM2_5Fold
 ```
 
-The script runs 5-fold cross-validation and keeps the best checkpoint according to validation Dice. Defaults follow the paper: `--common_ratio 4.0` (R_GE), `--expert_ratio 0.25` (R_SE) and `--prompt_threshold 0.9` (τ).
+The script runs 5-fold cross-validation and keeps the best checkpoint according to validation Dice. Default settings: `--common_ratio 4.0` (R_GE), `--expert_ratio 0.25` (R_SE) and `--prompt_threshold 0.9` (τ).
 
 ### 5. Evaluation
 
