@@ -111,10 +111,4 @@ python code/test_mome_useg.py \
     --gpu 0
 ```
 
-Dice, IoU, SM, HD95 and ASSD are computed for every dataset and reported as mean ± std over the evaluated folds. Results are saved to `test_results_sam2_base/` (change with `--save_path`):
-
-- `final_statistics.csv/.xlsx` — per-dataset metrics plus an `OVERALL_MACRO` row
-- `sample_fold_means_for_significance.csv` — per-sample, per-fold scores for significance testing
-- `fold_{k}_visualizations/` — TP/FP/FN overlays, enabled with `--visualize`
-
-All five folds are evaluated by default; use `--folds 0 1` to evaluate selected folds, and `--visualize_only <dataset>` / `--visualize_fold <k>` to restrict the exported error maps.
+Dice, IoU, HD95 and ASSD are computed for every dataset and reported as mean ± std over the evaluated folds.
