@@ -26,7 +26,7 @@ This repository provides the official implementation of MEMO-USeg.
 - **Prompt-free deployment.** No manual bounding box or point prompts are required.
 
 <p align="center">
-  <img src="assets/organs.png" alt="MEMO-USeg covers 13 ultrasound organs" width="400">
+  <img src="assets/organs.png" alt="MEMO-USeg covers 13 ultrasound organs" width="300">
 </p>
 
 <p align="center"><i>Examples from the 13 ultrasound organs covered by MEMO-USeg.</i></p>
