@@ -212,11 +212,11 @@ def main():
     parser.add_argument("--save_dir", type=str, default=None,
                         help="默认 SAM2: work_dir/MEMO_SAM2_5Fold, SAM1: work_dir/MEMO_SAM_5Fold")
     parser.add_argument("--common_ratio", type=float, default=4.0,
-                        help="通用专家扩张比 R_GE (论文 4.0)")
+                        help="general expert expansion ratio R_GE (default 4.0)")
     parser.add_argument("--expert_ratio", type=float, default=0.25,
-                        help="特定专家扩张比 R_SE (论文 0.25)")
+                        help="organ-specific expert expansion ratio R_SE (default 0.25)")
     parser.add_argument("--prompt_threshold", type=float, default=0.9,
-                        help="SPG 阈值 tau (论文 0.9)")
+                        help="SPG threshold tau (default 0.9)")
     parser.add_argument("--seed", type=int, default=1234,
                         help="随机种子; 第 fold 折使用 seed+fold")
     parser.add_argument("--gpu", type=int, default=1)
