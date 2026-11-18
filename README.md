@@ -84,7 +84,7 @@ ${DATASET_ROOT}/
 The 13 datasets and their class ids are defined in [`code/datasets.yaml`](code/datasets.yaml). Point `DATASET_ROOT` to your data directory:
 
 ```bash
-export DATASET_ROOT=/path/to/datasets     # Windows: set DATASET_ROOT=D:\datasets
+export DATASET_ROOT=/path/to/datasets
 ```
 
 ### 3. Pretrained backbone
